@@ -442,7 +442,7 @@ class HotelFolio(models.Model):
         self.duration = myduration
 
     @api.model
-    def create(self, vals, check=True):
+    def create(self, vals, check=False):
         """
         Overrides orm create method.
         @param self: The object pointer
@@ -471,7 +471,7 @@ class HotelFolio(models.Model):
                         for room_rec in rec.room_lines:
                             prod = room_rec.product_id.name
                             room_obj = h_room_obj.search([('name', '=', prod)])
-                            room_obj.write({'isroom': False})
+                            room_obj.write({'isroom': True})
                             vals = {'room_id': room_obj.id,
                                     'check_in': rec.checkin_date,
                                     'check_out': rec.checkout_date,

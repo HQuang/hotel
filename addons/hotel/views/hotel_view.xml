@@ -742,6 +742,7 @@
             <tree string="Hotel Folio" colors="blue:state == 'draft';gray:state == 'done'">
                 <field name="checkin_date" />
                 <field name="checkout_date" />
+                <field name="product_id" />
                 <field name="name" />
                 <field name="partner_id" select="1" />
                 <field name="date_order" select="1" />
